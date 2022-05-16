@@ -2,14 +2,16 @@
 # Buffer Overflow Attack
 
 ## 1(Section 3.4): Binaries a32.out and a64.out[32 and 64 bit]
-When we compile the “make” file from shellcode, then it will generate two binaries a32.out and a64.out. After running these binaries, it opens a new shell as shown below.!<img width="410" alt="image" src="https://user-images.githubusercontent.com/92758859/168507830-58a8ac3f-ea1d-4779-ae30-8f04a780f2d0.png">
+When we compile the “make” file from shellcode, then it will generate two binaries a32.out and a64.out. After running these binaries, it opens a new shell as shown below.
+!<img width="410" alt="image" src="https://user-images.githubusercontent.com/92758859/168507830-58a8ac3f-ea1d-4779-ae30-8f04a780f2d0.png">
 
  
 
 ## 2.(Section 4): Functioning of stack.c.
  “bof()” is the function in stack.c program. It contains a character buffer of size 100 (BUF_SIZE) and a strcpy() function. From the file 517 bytes of data is read by the main function which is  "badfile", and then copies the data to a buffer of size 100. Here, there is a buffer overflow. We will place the code in "badfile", when the program reads from that file, the code is loaded into the string array. The program copies string to the target buffer, the code will be stored on the stack. Now, we want the program to jump to the code. We can overwrite the return address field. Here, if the address of the “bad file” is known, then we can use this address to overwrite the return address field. When the function bof() returns, it will redirect to the new address, where the code is stored.
 Section 5.1 – Distance between the buffer's start address and the location of the stored return address
-We have calculate the Distance by “gdb” command. ![image](https://user-images.githubusercontent.com/92758859/168507872-5dd81478-2ba3-460e-8f04-2c9e467527c6.jpeg)
+We have calculate the Distance by “gdb” command.
+![image](https://user-images.githubusercontent.com/92758859/168507872-5dd81478-2ba3-460e-8f04-2c9e467527c6.jpeg)
 
  
 ## 3.(Section 5.2) – The Final contents of exploit.py after modifications
