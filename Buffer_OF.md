@@ -3,7 +3,8 @@
 
 ## 1(Section 3.4): Binaries a32.out and a64.out[32 and 64 bit]
 When we compile the “make” file from shellcode, then it will generate two binaries a32.out and a64.out. After running these binaries, it opens a new shell as shown below.
-!<img width="410" alt="image" src="https://user-images.githubusercontent.com/92758859/168507830-58a8ac3f-ea1d-4779-ae30-8f04a780f2d0.png">
+
+<img width="410" alt="image" src="https://user-images.githubusercontent.com/92758859/168507830-58a8ac3f-ea1d-4779-ae30-8f04a780f2d0.png">
 
  
 
